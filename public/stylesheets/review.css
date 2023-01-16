@@ -131,3 +131,6 @@
   .display{
     display: inline-flex;
   }
+  .display-none{
+    display: none;
+  }

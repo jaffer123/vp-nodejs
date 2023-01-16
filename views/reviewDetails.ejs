@@ -1,6 +1,14 @@
 <%- include('common/header.ejs') %>
-    <% let ratingScale = data.ratingList.ratingScale.excellent%>
-    
+    <% let excellent = data.ratingList.ratingScale.excellent%>
+    <p id="excellent" class="display-none" > <%= excellent %></p>
+    <% let good = data.ratingList.ratingScale.good%>
+    <p id="good" class="display-none" > <%= good %></p>
+    <% let average = data.ratingList.ratingScale.average%>
+    <p id="average" class="display-none" > <%= average %></p>
+    <% let belowAverage = data.ratingList.ratingScale.belowAverage%>
+    <p id="belowAverage" class="display-none" > <%= belowAverage %></p>
+    <% let poor = data.ratingList.ratingScale.poor%>
+    <p id="poor" class="display-none" > <%= poor %></p>
     <div class="row">
         <div class="col-sm-6">
             <div>
@@ -142,10 +150,15 @@
         </div>
     </div>
     <script>
-        move("myBar1", 44);
-        move("myBar2", 6);
-        move('myBar3', 44)
-        move("myBar4", 0);
-        move("myBar5", 6);
+        let excellent = document.getElementById("excellent").innerHTML;
+        let good = document.getElementById("good").innerHTML;
+        let average = document.getElementById("average").innerHTML;
+        let belowAverage = document.getElementById("belowAverage").innerHTML;
+        let poor = document.getElementById("poor").innerHTML;
+        move("myBar1", excellent);
+        move("myBar2", good);
+        move('myBar3', average)
+        move("myBar4", belowAverage);
+        move("myBar5", poor);
     </script>
 <%- include('common/footer.ejs') %>
