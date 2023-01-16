@@ -1,0 +1,151 @@
+<%- include('common/header.ejs') %>
+    <% let ratingScale = data.ratingList.ratingScale.excellent%>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <center>
+                    <h1 class="title">Overall Reviews</h1>
+                </center>
+                <center>
+                    <h1>
+                        <%= data.ratingList.overAllRating %>
+                    </h1>
+                </center>
+                <center>
+                    <div>
+                        <% for (let i=1 ; i <=5 ; i++ ) { %>
+                            <%if(i <=data.ratingList.overAllRating) { %>
+                                <span class="fa fa-star checked"></span>
+                                <%}else{%>
+                                    <span class="fa fa-star"></span>
+                                    <%}%>
+                                        <%}%>
+                    </div>
+                </center>
+                <center>
+                    <h3>based on <%= data.ratingList.total %> reviews</h3>
+                </center>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <center>
+                            <h3>Excellent</h3>
+                        </center>
+                    </div>
+                    <div class="col-sm-8">
+                        <div id="myProgress">
+                            <div name="myBar" id="myBar1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <center>
+                            <h3>Good</h3>
+                        </center>
+                    </div>
+                    <div class="col-sm-8">
+                        <div id="myProgress">
+                            <div name="myBar" id="myBar2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <center>
+                            <h3>Average</h3>
+                        </center>
+                    </div>
+                    <div class="col-sm-8">
+                        <div id="myProgress">
+                            <div name="myBar" id="myBar3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <center>
+                            <h3>Below Average</h3>
+                        </center>
+                    </div>
+                    <div class="col-sm-8">
+                        <div id="myProgress">
+                            <div name="myBar" id="myBar4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <center>
+                            <h3>Poor</h3>
+                        </center>
+                    </div>
+                    <div class="col-sm-8">
+                        <div id="myProgress">
+                            <div name="myBar" id="myBar5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="vertical-center">
+                        <form action="/review/create" method="get">
+                            <input class="btn success button button-align" type="submit" value="Write Review" />
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <center><h1 class="title">Review with commands</h1></center>
+            <% let reviewList=data.reviewList %>
+                <% for (let i=0 ; i < reviewList.length; i++ ) { %>
+                    <br />
+                    <% let row=reviewList[i] %>
+                        <div class="reviewBox">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <img width="50px" height="50px" src="/images/profile.png">
+                                </div>
+                                <div class="col-sm-7">
+                                    <b>
+                                        <%= row.name %>
+                                    </b><br>
+                                    
+                                    <div>
+                                        <% for (let i=1 ; i <=5 ; i++ ) { %>
+                                            <%if(i <=row.ratings) { %>
+                                                <span class="fa fa-star checked"></span>
+                                                <%}else{%>
+                                                    <span class="fa fa-star"></span>
+                                                    <%}%>
+                                                        <%}%>
+                                                        <b>
+                                                            <%= row.ratings %>
+                                                        </b>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>
+                                        <%= row.createdAt %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <p>
+                                    <%= row.comments %>
+                                </p>
+                            </div>
+                        </div>
+                        <% } %>
+        </div>
+    </div>
+    <script>
+        move("myBar1", 44);
+        move("myBar2", 6);
+        move('myBar3', 44)
+        move("myBar4", 0);
+        move("myBar5", 6);
+    </script>
+<%- include('common/footer.ejs') %>

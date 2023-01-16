@@ -1,0 +1,133 @@
+.rating-css div {
+    color: #ffe400;
+}
+
+.rating-css input {
+    display: none;
+}
+
+.rating-css input+label {
+    font-size: 30px;
+    text-shadow: 1px 1px 0 #ffe400;
+    cursor: pointer;
+}
+
+.rating-css input:checked+label~label {
+    color: #838383;
+}
+
+.rating-css label:active {
+    transform: scale(0.8);
+    transition: 0.3s ease;
+}
+
+.reviewBox {
+    width: 700px;
+    padding: 50px;
+    border: 3px solid #b2b3b5;
+}
+
+.checked {
+    color: #ffa500;
+}
+
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #eee;
+}
+
+.success {
+    color: green;
+}
+
+.container {
+    height: 350px;
+    position: relative;
+}
+
+.vertical-center {
+    margin-left: 300px;
+    position: absolute;
+    top: 90%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#myBar1 {
+    width: 1%;
+    height: 30px;
+    background-color: #33a14b;
+}
+
+#myBar2 {
+    width: 1%;
+    height: 30px;
+    background-color: #08f34e
+}
+
+#myBar3 {
+    width: 1%;
+    height: 30px;
+    background-color: #99aebe;
+}
+
+#myBar4 {
+    width: 1%;
+    height: 30px;
+    background-color: #A28080;
+}
+
+#myBar5 {
+    width: 1%;
+    height: 30px;
+    background-color: #ee0c0c;
+}
+.title{
+    color: #17a2b8;
+}
+.font-label{
+    color: black;
+    font-size: 30px;
+}
+.input-box{
+    width: 450px;
+    height: 50px;
+}
+.input-comment{
+    width: 600px;
+    height: 50px;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .group-image{
+    height: 350px;
+    margin-top: 30px;
+  }
+
+  .display{
+    display: inline-flex;
+  }

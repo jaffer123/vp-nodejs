@@ -1,0 +1,7 @@
+{
+    "MYSQL":{
+        "DataBase":"vaya_life",
+        "UserName":"admin",
+        "PassWord":"admin123"
+    }
+}

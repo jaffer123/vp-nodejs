@@ -1,0 +1,35 @@
+<%- include('common/header.ejs') %>
+    <div class="row">
+        <div class="col-sm-6">
+            <center><img src='/images/groupImage.png' class="group-image" alt="groupImage"></center>
+        </div>
+        <div class="col-sm-6">
+            <form action="/review/save" method="post">
+                <div class="form-group ">
+                  <label for="name" class="font-label" >Name</label>
+                  <input type="text" class="form-control input-box" id="name" placeholder="Enter name" name="name">
+                </div>
+                  <div class="rating-css display form-group">
+                  <div class="star-icon">
+                    <input type="radio" name="rating" id="rating1" value="1">
+                    <label for="rating1" class="fa fa-star"></label>
+                    <input type="radio" name="rating" id="rating2"  value="2">
+                    <label for="rating2" class="fa fa-star"></label>
+                    <input type="radio" name="rating" id="rating3"  value="3">
+                    <label for="rating3" class="fa fa-star"></label>
+                    <input type="radio" name="rating" id="rating4"  value="4">
+                    <label for="rating4" class="fa fa-star"></label>
+                    <input type="radio" name="rating" id="rating5"  value="5">
+                    <label for="rating5" class="fa fa-star"></label>
+                  </div>
+                    <label for="rating" class="font-label" >Rating</label>
+                </div>
+                <div class="form-group">
+                    <label for="comments" class="font-label" >Comment</label>
+                    <input type="text" class="form-control input-comment" id="comments" placeholder="Enter comment" name="comments">
+                  </div>
+                <button type="submit" class="btn btn-default button">Submit</button>
+              </form>
+        </div>
+    </div>
+<%- include('common/footer.ejs') %>
