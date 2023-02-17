@@ -1,0 +1,8 @@
+{
+    "AWS":{
+        "Region":"ap-south-1",
+        "BucketName":"mediatube",
+        "AccessKey":"AKIAYBV7NOF63PIO3MLV",
+        "SecretKey":"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"
+    }
+}
