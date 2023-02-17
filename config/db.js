@@ -1,14 +1,12 @@
-const Sequelize = require('sequelize');
-const {MYSQL} = require("./vaya.json");
+let AWS = require('aws-sdk');
+const VP = require('../config/vp.json');
 
-const db = new Sequelize(MYSQL.DataBase,MYSQL.UserName,MYSQL.PassWord,{
-    host:'localhost',
-    dialect:'mysql',
-    define:{
-        "freezeTableName": true,
-        "timestamps": true,
-    },
-    
-})
+AWS.config.update({
+    "region": VP.AWS.Region,
+    "accessKeyId": VP.AWS.AccessKey,
+    "secretAccessKey": VP.AWS.SecretKey
+   });
 
-module.exports = db;
+let docClient = new AWS.DynamoDB.DocumentClient();
+
+module.exports = docClient;
